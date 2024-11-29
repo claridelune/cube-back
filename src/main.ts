@@ -19,6 +19,7 @@ const configuration: Configuration = {
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix(configuration.prefix);
+  app.enableCors();
 
   const config = new DocumentBuilder()
     .setTitle(configuration.title)
